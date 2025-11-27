@@ -99,6 +99,7 @@ export interface WebdavConfig {
   remoteBaseDir?: string;
 
   customHeaders?: string;
+  disableChunkedUpload?: boolean;
 
   /**
    * @deprecated

@@ -594,6 +594,15 @@ export class FakeFsWebdav extends FakeFs {
     ctime: number,
     origKey: string
   ): Promise<Entity> {
+    if (this.webdavConfig.disableChunkedUpload) {
+      return await this._writeFileFromRootFull(
+        key,
+        content,
+        mtime,
+        ctime,
+        origKey
+      );
+    }
     // less than 10 MB
     if (content.byteLength <= 10 * 1024 * 1024) {
       return await this._writeFileFromRootFull(

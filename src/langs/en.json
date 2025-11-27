@@ -254,6 +254,8 @@
   "settings_webdav_depth_inf": "supports depth='infinity'",
   "settings_webdav_customheaders": "Custom Headers Sent To Servers",
   "settings_webdav_customheaders_desc": "Some users may want to set custom headers. If you don't know what it is, just leave it empty. Input them like: <code>X-Header1:value1</code> in each line. All spaces around header keys and values will be removed.",
+  "settings_webdav_disablechunked": "Disable Chunked Upload",
+  "settings_webdav_disablechunked_desc": "Disable chunked/partial uploads for large files (>10MB). Enable this if your server returns 405 errors when uploading large files. All files will be uploaded in a single request.",
   "settings_webdav_connect_succ": "Great! The webdav server can be accessed.",
   "settings_webdav_connect_fail": "The webdav server cannot be reached (possible to be any of address/username/password/authtype errors).",
   "settings_webdav_connect_fail_withcors": "The webdav server cannot be reached (possible to be any of address/username/password/authtype/CORS errors).",

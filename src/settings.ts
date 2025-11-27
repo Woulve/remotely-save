@@ -1659,6 +1659,19 @@ export class RemotelySaveSettingTab extends PluginSettingTab {
         textArea.inputEl.addClass("webdav-customheaders-textarea");
       });
 
+    new Setting(webdavDiv)
+      .setName(t("settings_webdav_disablechunked"))
+      .setDesc(t("settings_webdav_disablechunked_desc"))
+      .addToggle((toggle) => {
+        toggle
+          .setValue(this.plugin.settings.webdav.disableChunkedUpload ?? false)
+          .onChange(async (value) => {
+            this.plugin.settings.webdav.disableChunkedUpload = value;
+            await this.plugin.saveSettings();
+          });
+      });
+
+
     let newWebdavRemoteBaseDir =
       this.plugin.settings.webdav.remoteBaseDir || "";
     new Setting(webdavDiv)
